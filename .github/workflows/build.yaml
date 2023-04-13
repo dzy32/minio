@@ -46,5 +46,4 @@ jobs:
           context: .
           file: Dockerfile.release
           push: true
-          load: true
           tags: ysys/minio:latest
