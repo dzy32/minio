@@ -40,10 +40,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: build minio
+        run: make all
+
       - name: Build
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: Dockerfile.release
+          file: Dockerfile
           push: true
           tags: ysys/minio:latest
